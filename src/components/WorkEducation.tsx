@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MapPin, Calendar, ExternalLink, Award } from 'lucide-react';
 
 const WorkEducation: React.FC = () => {

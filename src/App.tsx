@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import IconScroll from './components/IconScroll';
 import WorkEducation from './components/WorkEducation';
 import FeaturedProjects from './components/FeaturedProjects';
 import ProjectsPage from './components/ProjectsPage';
@@ -24,6 +25,7 @@ function App() {
         return (
           <>
             <Hero />
+            <IconScroll />
             <WorkEducation />
             <FeaturedProjects onViewMore={() => setCurrentPage('projects')} />
           </>
@@ -42,7 +44,7 @@ function App() {
       <div className="bg-black text-white min-h-screen">
         <Header
           currentPage={currentPage}
-          onNavigate={setCurrentPage}
+          onNavigate={(page) => setCurrentPage(page as PageType)}
           darkMode={darkMode}
           toggleDarkMode={toggleDarkMode}
         />

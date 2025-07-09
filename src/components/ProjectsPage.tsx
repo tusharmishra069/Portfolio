@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Github, ExternalLink, Filter } from 'lucide-react';
 
 const ProjectsPage: React.FC = () => {
@@ -9,7 +9,7 @@ const ProjectsPage: React.FC = () => {
       id: 1,
       title: 'ResuME.AI',
       description: 'Resume enhancement using AI with ATS Score Checker and Job Description-based resume generation',
-      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/resume.ai.png',
       technologies: ['Streamlit', 'Tesseract OCR', 'Gemini API', 'Python'],
       category: 'ai-ml',
       github: 'https://github.com/tusharmishra069/ResuME.AI-.git',
@@ -19,7 +19,7 @@ const ProjectsPage: React.FC = () => {
       id: 2,
       title: 'HasthVaani: Smart Hand Gloves',
       description: 'Gesture to speech/text system - Assistive technology for deaf & mute individuals',
-      image: 'https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/hasthvani.png',
       technologies: ['Arduino', 'C++', 'Python', 'KNN', 'scikit-learn'],
       category: 'hardware',
       github: 'https://github.com/tusharmishra069/HasthVaani.git',

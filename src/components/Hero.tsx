@@ -1,9 +1,8 @@
-import React from 'react';
 import { Download, Github, Linkedin, Twitter, Code, Mail } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+    <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -36,7 +35,7 @@ const Hero: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-3 pt-4">
               <a
-                href="https://drive.google.com/drive/folders/1jTAEVVkqXuwN3YGaMGrQf1MIAR-LePb7?usp=sharing"
+                href="https://drive.google.com/file/d/1bqTdWauXOGC99UbSHnZQIiZoAQtbiThW/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors border border-gray-600"
@@ -62,7 +61,10 @@ const Hero: React.FC = () => {
               </a>
               <a
                 href="mailto:tusharmishra069@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors border border-gray-600"
+                title="Send Email"
               >
                 <Mail size={18} />
               </a>
