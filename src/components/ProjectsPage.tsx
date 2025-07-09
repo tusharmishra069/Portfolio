@@ -36,6 +36,16 @@ const ProjectsPage: React.FC = () => {
       demo: '#'
     },
     {
+      id: 7,
+      title: 'Developer Portfolio',
+      description: 'Personal portfolio website built with Vite, TypeScript, EmailJS, and Tailwind CSS. Showcases projects, skills, and contact form integration.',
+      image: '/ss/portfolio.png',
+      technologies: ['Vite', 'TypeScript', 'EmailJS', 'Tailwind CSS'],
+      category: 'web-dev',
+      github: 'https://github.com/tusharmishra069/Portfolio.git',
+      demo: 'https://portfolio-tan-chi-8pg7erl4bf.vercel.app/'
+    },
+    {
       id: 4,
       title: 'AutoCerti - Certificate Automation',
       description: 'Automated bulk certificate generation with preview and one-click generation',
@@ -53,7 +63,7 @@ const ProjectsPage: React.FC = () => {
       technologies: ['n8n', 'Workflow Automation'],
       category: 'automation',
       github: 'https://github.com/tusharmishra069/Reddit-automation-using-n8n.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/Reddit-automation-using-n8n.git',
     },
     {
       id: 6,
@@ -65,16 +75,6 @@ const ProjectsPage: React.FC = () => {
       github: '#',
       demo: 'https://brics-hr.vercel.app/'
     },
-  //   {
-  //     id: 7,
-  //     title: 'E-Commerce Platform',
-  //     description: 'Full-stack e-commerce solution with payment integration and admin dashboard',
-  //     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-  //     technologies: ['Next.js', 'Stripe', 'MongoDB', 'Tailwind CSS'],
-  //     category: 'web-dev',
-  //     github: '#',
-  //     demo: '#'
-  //   },
   //   {
   //     id: 8,
   //     title: 'AI Chatbot Assistant',

@@ -13,7 +13,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       image: '/ss/resume.ai.png',
       technologies: ['Streamlit', 'Tesseract OCR', 'Gemini API', 'Python'],
       github: 'https://github.com/tusharmishra069/ResuME.AI-.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/ResuME.AI-.git'
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       image: '/ss/hasthvani.png',
       technologies: ['Arduino', 'C++', 'Python', 'KNN', 'scikit-learn'],
       github: 'https://github.com/tusharmishra069/HasthVaani.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/HasthVaani.git'
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       image: '/ss/codeinsight.png',
       technologies: ['Next.js', 'Gemini API', 'GitHub API', 'GraphQL'],
       github: 'https://github.com/tusharmishra069/CodeInsight.AI.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/CodeInsight.AI.git'
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       image: '/ss/autocerti.png',
       technologies: ['Flask', 'OpenPyXL', 'Pillow', 'HTML5/CSS3/JS'],
       github: 'https://github.com/tusharmishra069/Certificate-Automation.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/Certificate-Automation.git'
     }
   ];
 
