@@ -13,7 +13,7 @@ const ProjectsPage: React.FC = () => {
       technologies: ['Streamlit', 'Tesseract OCR', 'Gemini API', 'Python'],
       category: 'ai-ml',
       github: 'https://github.com/tusharmishra069/ResuME.AI-.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/ResuME.AI-.git'
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const ProjectsPage: React.FC = () => {
       technologies: ['Arduino', 'C++', 'Python', 'KNN', 'scikit-learn'],
       category: 'hardware',
       github: 'https://github.com/tusharmishra069/HasthVaani.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/HasthVaani.git'
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const ProjectsPage: React.FC = () => {
       technologies: ['Next.js', 'Gemini API', 'GitHub API', 'GraphQL'],
       category: 'web-dev',
       github: 'https://github.com/tusharmishra069/CodeInsight.AI.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/CodeInsight.AI.git'
     },
     {
       id: 7,
@@ -53,7 +53,7 @@ const ProjectsPage: React.FC = () => {
       technologies: ['Flask', 'OpenPyXL', 'Pillow', 'HTML5/CSS3/JS'],
       category: 'web-dev',
       github: 'https://github.com/tusharmishra069/Certificate-Automation.git',
-      demo: '#'
+      demo: 'https://github.com/tusharmishra069/Certificate-Automation.git'
     },
     {
       id: 5,
