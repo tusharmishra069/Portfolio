@@ -29,7 +29,7 @@ const ProjectsPage: React.FC = () => {
       id: 3,
       title: 'CodeInsight.AI',
       description: 'Developer profile analytics with GitHub + LeetCode integration and performance metrics',
-      image: 'https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/codeinsight.png',
       technologies: ['Next.js', 'Gemini API', 'GitHub API', 'GraphQL'],
       category: 'web-dev',
       github: 'https://github.com/tusharmishra069/CodeInsight.AI.git',
@@ -39,7 +39,7 @@ const ProjectsPage: React.FC = () => {
       id: 4,
       title: 'AutoCerti - Certificate Automation',
       description: 'Automated bulk certificate generation with preview and one-click generation',
-      image: 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/autocerti.png',
       technologies: ['Flask', 'OpenPyXL', 'Pillow', 'HTML5/CSS3/JS'],
       category: 'web-dev',
       github: 'https://github.com/tusharmishra069/Certificate-Automation.git',
@@ -49,7 +49,7 @@ const ProjectsPage: React.FC = () => {
       id: 5,
       title: 'Reddit Automation using n8n',
       description: 'Automated Reddit posting & engagement with Agentic AI workflows',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/n8n-color.png',
       technologies: ['n8n', 'Workflow Automation'],
       category: 'automation',
       github: 'https://github.com/tusharmishra069/Reddit-automation-using-n8n.git',
@@ -59,72 +59,72 @@ const ProjectsPage: React.FC = () => {
       id: 6,
       title: 'BRICSHR - Modern HR Platform',
       description: 'Modern HR platform with AI-integrated features for recruitment and employee management',
-      image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/brics hr.png',
       technologies: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
       category: 'web-dev',
       github: '#',
       demo: 'https://brics-hr.vercel.app/'
     },
-    {
-      id: 7,
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with payment integration and admin dashboard',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-      technologies: ['Next.js', 'Stripe', 'MongoDB', 'Tailwind CSS'],
-      category: 'web-dev',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 8,
-      title: 'AI Chatbot Assistant',
-      description: 'Intelligent chatbot with natural language processing and context awareness',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-      technologies: ['Python', 'OpenAI API', 'Flask', 'NLP'],
-      category: 'ai-ml',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 9,
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates and team features',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-      technologies: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
-      category: 'web-dev',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 10,
-      title: 'Weather Prediction Model',
-      description: 'Machine learning model for weather forecasting using historical data and neural networks',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-      technologies: ['Python', 'TensorFlow', 'Pandas', 'Scikit-learn'],
-      category: 'ai-ml',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 11,
-      title: 'IoT Home Automation',
-      description: 'Smart home automation system with sensor integration and mobile app control',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-      technologies: ['Arduino', 'React Native', 'Firebase', 'C++'],
-      category: 'hardware',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 12,
-      title: 'Social Media Analytics',
-      description: 'Analytics dashboard for social media performance tracking and insights generation',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-      technologies: ['React', 'D3.js', 'Python', 'API Integration'],
-      category: 'web-dev',
-      github: '#',
-      demo: '#'
-    }
+  //   {
+  //     id: 7,
+  //     title: 'E-Commerce Platform',
+  //     description: 'Full-stack e-commerce solution with payment integration and admin dashboard',
+  //     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  //     technologies: ['Next.js', 'Stripe', 'MongoDB', 'Tailwind CSS'],
+  //     category: 'web-dev',
+  //     github: '#',
+  //     demo: '#'
+  //   },
+  //   {
+  //     id: 8,
+  //     title: 'AI Chatbot Assistant',
+  //     description: 'Intelligent chatbot with natural language processing and context awareness',
+  //     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  //     technologies: ['Python', 'OpenAI API', 'Flask', 'NLP'],
+  //     category: 'ai-ml',
+  //     github: '#',
+  //     demo: '#'
+  //   },
+  //   {
+  //     id: 9,
+  //     title: 'Task Management App',
+  //     description: 'Collaborative task management application with real-time updates and team features',
+  //     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  //     technologies: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
+  //     category: 'web-dev',
+  //     github: '#',
+  //     demo: '#'
+  //   },
+  //   {
+  //     id: 10,
+  //     title: 'Weather Prediction Model',
+  //     description: 'Machine learning model for weather forecasting using historical data and neural networks',
+  //     image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  //     technologies: ['Python', 'TensorFlow', 'Pandas', 'Scikit-learn'],
+  //     category: 'ai-ml',
+  //     github: '#',
+  //     demo: '#'
+  //   },
+  //   {
+  //     id: 11,
+  //     title: 'IoT Home Automation',
+  //     description: 'Smart home automation system with sensor integration and mobile app control',
+  //     image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  //     technologies: ['Arduino', 'React Native', 'Firebase', 'C++'],
+  //     category: 'hardware',
+  //     github: '#',
+  //     demo: '#'
+  //   },
+  //   {
+  //     id: 12,
+  //     title: 'Social Media Analytics',
+  //     description: 'Analytics dashboard for social media performance tracking and insights generation',
+  //     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  //     technologies: ['React', 'D3.js', 'Python', 'API Integration'],
+  //     category: 'web-dev',
+  //     github: '#',
+  //     demo: '#'
+  //   }
   ];
 
   const categories = [

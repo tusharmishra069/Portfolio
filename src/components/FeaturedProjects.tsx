@@ -10,7 +10,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       id: 1,
       title: 'ResuME.AI',
       description: 'Resume enhancement using AI with ATS Score Checker and Job Description-based resume generation',
-      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/resume.ai.png',
       technologies: ['Streamlit', 'Tesseract OCR', 'Gemini API', 'Python'],
       github: 'https://github.com/tusharmishra069/ResuME.AI-.git',
       demo: '#'
@@ -19,7 +19,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       id: 2,
       title: 'HasthVaani: Smart Hand Gloves',
       description: 'Gesture to speech/text system - Assistive technology for deaf & mute individuals',
-      image: 'https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/hasthvani.png',
       technologies: ['Arduino', 'C++', 'Python', 'KNN', 'scikit-learn'],
       github: 'https://github.com/tusharmishra069/HasthVaani.git',
       demo: '#'
@@ -28,7 +28,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       id: 3,
       title: 'CodeInsight.AI',
       description: 'Developer profile analytics with GitHub + LeetCode integration and performance metrics',
-      image: 'https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/codeinsight.png',
       technologies: ['Next.js', 'Gemini API', 'GitHub API', 'GraphQL'],
       github: 'https://github.com/tusharmishra069/CodeInsight.AI.git',
       demo: '#'
@@ -37,7 +37,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       id: 4,
       title: 'AutoCerti - Certificate Automation',
       description: 'Automated bulk certificate generation with preview and one-click generation',
-      image: 'https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: '/ss/autocerti.png',
       technologies: ['Flask', 'OpenPyXL', 'Pillow', 'HTML5/CSS3/JS'],
       github: 'https://github.com/tusharmishra069/Certificate-Automation.git',
       demo: '#'
