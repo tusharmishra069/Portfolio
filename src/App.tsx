@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import WorkEducation from './components/WorkEducation';
+import FeaturedProjects from './components/FeaturedProjects';
+import ProjectsPage from './components/ProjectsPage';
+import ContactPage from './components/ContactPage';
+import Chatbot from './components/Chatbot';
+import Footer from './components/Footer';
+
+type PageType = 'home' | 'projects' | 'contact';
+
+function App() {
+  const [currentPage, setCurrentPage] = useState<PageType>('home');
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return (
+          <>
+            <Hero />
+            <WorkEducation />
+            <FeaturedProjects onViewMore={() => setCurrentPage('projects')} />
+          </>
+        );
+      case 'projects':
+        return <ProjectsPage />;
+      case 'contact':
+        return <ContactPage />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className={`${darkMode ? 'dark' : ''}`}>
+      <div className="bg-black text-white min-h-screen">
+        <Header
+          currentPage={currentPage}
+          onNavigate={setCurrentPage}
+          darkMode={darkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+        <main>
+          {renderPage()}
+        </main>
+        <Footer />
+        <Chatbot />
+      </div>
+    </div>
+  );
+}
+
+export default App;
