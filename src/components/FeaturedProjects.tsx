@@ -86,23 +86,40 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
-                  >
-                    <Github size={16} />
-                    Source
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-                  >
-                    <Globe size={16} />
-                    Demo
-                  </a>
+                <div className="flex gap-4 mt-6">
+                  {/* Show Website + Source for Portfolio and BRICSHR, only Source for others */}
+                  {(project.title === 'Developer Portfolio' || project.title === 'BRICSHR - Modern HR Platform') ? (
+                    <>
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
+                      >
+                        <ExternalLink size={16} />
+                        Website
+                      </a>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
+                      >
+                        <Github size={16} />
+                        Source
+                      </a>
+                    </>
+                  ) : (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
+                    >
+                      <Github size={16} />
+                      Source
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

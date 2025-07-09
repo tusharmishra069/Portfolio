@@ -73,7 +73,8 @@ const ProjectsPage: React.FC = () => {
       technologies: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
       category: 'web-dev',
       github: '#',
-      demo: 'https://brics-hr.vercel.app/'
+      demo: 'https://brics-hr.vercel.app/',
+      showWebsite: true
     },
   //   {
   //     id: 8,
@@ -195,25 +196,40 @@ const ProjectsPage: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
-                  >
-                    <Github size={16} />
-                    Source
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm"
-                  >
-                    <ExternalLink size={16} />
-                    Demo
-                  </a>
+                <div className="flex gap-3 mt-6">
+                  {/* Show Website + Source for Portfolio and projects with showWebsite */}
+                  {(project.title === 'Developer Portfolio' || project.showWebsite) ? (
+                    <>
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
+                      >
+                        <ExternalLink size={16} />
+                        Website
+                      </a>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
+                      >
+                        <Github size={16} />
+                        Source
+                      </a>
+                    </>
+                  ) : (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors text-sm"
+                    >
+                      <Github size={16} />
+                      Source
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

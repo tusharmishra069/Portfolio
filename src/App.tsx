@@ -8,6 +8,7 @@ import ProjectsPage from './components/ProjectsPage';
 import ContactPage from './components/ContactPage';
 import Chatbot from './components/Chatbot';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 type PageType = 'home' | 'projects' | 'contact';
 
@@ -40,21 +41,24 @@ function App() {
   };
 
   return (
-    <div className={`${darkMode ? 'dark' : ''}`}>
-      <div className="bg-black text-white min-h-screen">
-        <Header
-          currentPage={currentPage}
-          onNavigate={(page) => setCurrentPage(page as PageType)}
-          darkMode={darkMode}
-          toggleDarkMode={toggleDarkMode}
-        />
-        <main>
-          {renderPage()}
-        </main>
-        <Footer />
-        <Chatbot />
+    <>
+      <CustomCursor />
+      <div className={`${darkMode ? 'dark' : ''}`}>
+        <div className="bg-black text-white min-h-screen">
+          <Header
+            currentPage={currentPage}
+            onNavigate={(page) => setCurrentPage(page as PageType)}
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+          />
+          <main>
+            {renderPage()}
+          </main>
+          <Footer />
+          <Chatbot />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

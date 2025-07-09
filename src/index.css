@@ -35,3 +35,26 @@ body::-webkit-scrollbar, html::-webkit-scrollbar, #root::-webkit-scrollbar {
 .animate-scrollDot {
   animation: scrollDot 1.2s infinite;
 }
+
+@keyframes scrollDotEnhanced {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, 40px);
+  }
+  90% {
+    opacity: 0;
+    transform: translate(-50%, 40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-scrollDotEnhanced {
+  animation: scrollDotEnhanced 1.4s cubic-bezier(0.4,0,0.2,1) infinite;
+}

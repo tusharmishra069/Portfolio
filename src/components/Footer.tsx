@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <div className="text-center text-gray-400 text-sm">
-            <p>© 2025 tusharmishra.com | <a href="#" className="hover:text-white transition-colors">privacy?</a></p>
+            <p>© 2025 tusharmishra <a href="#" className="hover:text-white transition-colors"></a></p>
           </div>
         </div>
       </div>

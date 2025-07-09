@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
 
             <div className="space-y-4">
               <p className="text-blue-400 font-medium">
-                For Q&A, chat with Tushar Support →
+                For Q&A, chat with Tushar Bot →
               </p>
               <p className="text-sm text-gray-500">
                 For collaborations, please find my{' '}

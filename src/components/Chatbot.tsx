@@ -1,9 +1,10 @@
 import  { useState } from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 
+type SalaryMessage = { type: 'salary' };
 interface Message {
   id: string;
-  text: string;
+  text: string | SalaryMessage;
   sender: 'user' | 'bot';
   timestamp: Date;
 }
@@ -48,7 +49,7 @@ const Chatbot: React.FC = () => {
     ]
   };
 
-  const generateResponse = (userMessage: string): string => {
+  const generateResponse = (userMessage: string): string | SalaryMessage => {
     const message = userMessage.toLowerCase();
     
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
@@ -65,6 +66,13 @@ const Chatbot: React.FC = () => {
       return "You can reach me at:\n\nEmail: tusharmishra069@gmail.com\nPhone: +91-7488906709\nLinkedIn: https://www.linkedin.com/in/tushar-kumar-mishra-1974b124b/\nGitHub: https://github.com/tusharmishra069";
     } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
       return "Hello! I'm here to help you learn more about Tushar's background, projects, and experience. What specific area would you like to know about?";
+    } else if (
+      message.includes('salary') ||
+      message.includes('ctc') ||
+      message.includes('pay') ||
+      message.includes('package')
+    ) {
+      return { type: 'salary' };
     } else {
       return "I can help you learn about Tushar's experience, projects, skills, achievements, education, or contact information. What would you like to know more about?";
     }
@@ -114,7 +122,7 @@ const Chatbot: React.FC = () => {
             <div className="flex items-center gap-2">
               <Bot size={20} />
               <div>
-                <h3 className="font-medium">Tushar Support</h3>
+                <h3 className="font-medium">Tushar Bot</h3>
                 <p className="text-xs text-blue-100">Portfolio Assistant</p>
               </div>
             </div>
@@ -137,7 +145,29 @@ const Chatbot: React.FC = () => {
                   <div className="flex items-start gap-2">
                     {message.sender === 'bot' && <Bot size={16} className="mt-1 flex-shrink-0" />}
                     {message.sender === 'user' && <User size={16} className="mt-1 flex-shrink-0" />}
-                    <p className="text-sm whitespace-pre-line">{message.text}</p>
+                    {typeof message.text === 'string' ? (
+                      <p className="text-sm whitespace-pre-line">{message.text}</p>
+                    ) : message.text && message.text.type === 'salary' ? (
+                      <div className="flex flex-col gap-2">
+                        <span className="text-sm">For salary discussions, please contact Tushar directly:</span>
+                        <div className="flex gap-2 mt-1">
+                          <a
+                            href="https://www.linkedin.com/in/tushar-kumar-mishra-1974b124b/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold transition-colors"
+                          >
+                            LinkedIn
+                          </a>
+                          <a
+                            href="/#contact"
+                            className="px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-xs font-semibold transition-colors"
+                          >
+                            Contact Page
+                          </a>
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
