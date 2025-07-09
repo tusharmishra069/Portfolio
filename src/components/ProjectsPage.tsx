@@ -43,7 +43,7 @@ const ProjectsPage: React.FC = () => {
       technologies: ['Vite', 'TypeScript', 'EmailJS', 'Tailwind CSS'],
       category: 'web-dev',
       github: 'https://github.com/tusharmishra069/Portfolio.git',
-      demo: 'https://portfolio-tan-chi-8pg7erl4bf.vercel.app/'
+      demo: 'https://portfolio-o5u1zw6vq-tusharmishra069s-projects.vercel.app/'
     },
     {
       id: 4,
