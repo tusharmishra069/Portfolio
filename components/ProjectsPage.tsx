@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Github, ExternalLink, Filter } from 'lucide-react';
 
@@ -76,56 +78,56 @@ const ProjectsPage: React.FC = () => {
       demo: 'https://brics-hr.vercel.app/',
       showWebsite: true
     },
-  //   {
-  //     id: 8,
-  //     title: 'AI Chatbot Assistant',
-  //     description: 'Intelligent chatbot with natural language processing and context awareness',
-  //     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-  //     technologies: ['Python', 'OpenAI API', 'Flask', 'NLP'],
-  //     category: 'ai-ml',
-  //     github: '#',
-  //     demo: '#'
-  //   },
-  //   {
-  //     id: 9,
-  //     title: 'Task Management App',
-  //     description: 'Collaborative task management application with real-time updates and team features',
-  //     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-  //     technologies: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
-  //     category: 'web-dev',
-  //     github: '#',
-  //     demo: '#'
-  //   },
-  //   {
-  //     id: 10,
-  //     title: 'Weather Prediction Model',
-  //     description: 'Machine learning model for weather forecasting using historical data and neural networks',
-  //     image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-  //     technologies: ['Python', 'TensorFlow', 'Pandas', 'Scikit-learn'],
-  //     category: 'ai-ml',
-  //     github: '#',
-  //     demo: '#'
-  //   },
-  //   {
-  //     id: 11,
-  //     title: 'IoT Home Automation',
-  //     description: 'Smart home automation system with sensor integration and mobile app control',
-  //     image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-  //     technologies: ['Arduino', 'React Native', 'Firebase', 'C++'],
-  //     category: 'hardware',
-  //     github: '#',
-  //     demo: '#'
-  //   },
-  //   {
-  //     id: 12,
-  //     title: 'Social Media Analytics',
-  //     description: 'Analytics dashboard for social media performance tracking and insights generation',
-  //     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-  //     technologies: ['React', 'D3.js', 'Python', 'API Integration'],
-  //     category: 'web-dev',
-  //     github: '#',
-  //     demo: '#'
-  //   }
+    //   {
+    //     id: 8,
+    //     title: 'AI Chatbot Assistant',
+    //     description: 'Intelligent chatbot with natural language processing and context awareness',
+    //     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+    //     technologies: ['Python', 'OpenAI API', 'Flask', 'NLP'],
+    //     category: 'ai-ml',
+    //     github: '#',
+    //     demo: '#'
+    //   },
+    //   {
+    //     id: 9,
+    //     title: 'Task Management App',
+    //     description: 'Collaborative task management application with real-time updates and team features',
+    //     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+    //     technologies: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
+    //     category: 'web-dev',
+    //     github: '#',
+    //     demo: '#'
+    //   },
+    //   {
+    //     id: 10,
+    //     title: 'Weather Prediction Model',
+    //     description: 'Machine learning model for weather forecasting using historical data and neural networks',
+    //     image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+    //     technologies: ['Python', 'TensorFlow', 'Pandas', 'Scikit-learn'],
+    //     category: 'ai-ml',
+    //     github: '#',
+    //     demo: '#'
+    //   },
+    //   {
+    //     id: 11,
+    //     title: 'IoT Home Automation',
+    //     description: 'Smart home automation system with sensor integration and mobile app control',
+    //     image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+    //     technologies: ['Arduino', 'React Native', 'Firebase', 'C++'],
+    //     category: 'hardware',
+    //     github: '#',
+    //     demo: '#'
+    //   },
+    //   {
+    //     id: 12,
+    //     title: 'Social Media Analytics',
+    //     description: 'Analytics dashboard for social media performance tracking and insights generation',
+    //     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+    //     technologies: ['React', 'D3.js', 'Python', 'API Integration'],
+    //     category: 'web-dev',
+    //     github: '#',
+    //     demo: '#'
+    //   }
   ];
 
   const categories = [
@@ -136,8 +138,8 @@ const ProjectsPage: React.FC = () => {
     { id: 'automation', name: 'Automation' }
   ];
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'all'
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   return (
@@ -156,11 +158,10 @@ const ProjectsPage: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all ${
-                selectedCategory === category.id
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-              }`}
+              className={`px-6 py-3 rounded-lg font-medium transition-all ${selectedCategory === category.id
+                ? 'bg-blue-600 text-white'
+                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                }`}
             >
               {category.name}
             </button>
@@ -184,7 +185,7 @@ const ProjectsPage: React.FC = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
                 <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span

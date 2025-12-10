@@ -1,21 +1,28 @@
 import { useState } from 'react';
-import { Menu, X, Sun, Moon, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
   darkMode: boolean;
   toggleDarkMode: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, darkMode, toggleDarkMode }) => {
+const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigation = [
-    { name: 'home', label: 'Home' },
-    { name: 'projects', label: 'Projects' },
-    { name: 'contact', label: 'Contact' }
+    { name: '/', label: 'Home' },
+    { name: '/projects', label: 'Projects' },
+    { name: '/contact', label: 'Contact' }
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/' && pathname === '/') return true;
+    if (path !== '/' && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm">
@@ -23,28 +30,27 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, darkMode, togg
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <button
-              onClick={() => onNavigate('home')}
+            <Link
+              href="/"
               className="text-xl font-bold text-white hover:text-blue-400 transition-colors"
             >
               tushar<span className="text-blue-400">mishra</span>
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                onClick={() => onNavigate(item.name)}
-                className={`text-sm font-normal transition-colors ${
-                  currentPage === item.name
+                href={item.name}
+                className={`text-sm font-normal transition-colors ${isActive(item.name)
                     ? 'text-blue-400'
                     : 'text-gray-300 hover:text-white'
-                }`}
+                  }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -84,20 +90,17 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, darkMode, togg
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/90 backdrop-blur-sm border-t border-gray-800">
               {navigation.map((item) => (
-                <button
+                <Link
                   key={item.name}
-                  onClick={() => {
-                    onNavigate(item.name);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${
-                    currentPage === item.name
+                  href={item.name}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${isActive(item.name)
                       ? 'text-blue-400 bg-gray-800'
                       : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  }`}
+                    }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <div className="flex items-center justify-center space-x-4 pt-4">
                 <a

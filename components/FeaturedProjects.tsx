@@ -1,10 +1,7 @@
 import { ExternalLink, Github, Globe } from 'lucide-react';
+import Link from 'next/link';
 
-interface FeaturedProjectsProps {
-  onViewMore: () => void;
-}
-
-const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
+const FeaturedProjects: React.FC = () => {
   const projects = [
     {
       id: 1,
@@ -49,13 +46,13 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-3xl font-bold text-white">featured projects</h2>
-          <button 
-            onClick={onViewMore}
+          <Link
+            href="/projects"
             className="text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2"
           >
             view more
             <ExternalLink size={16} />
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -74,7 +71,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewMore }) => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
                 <p className="text-gray-300 mb-4 line-clamp-2">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span

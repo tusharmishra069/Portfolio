@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter } from 'lucide-react';
 import emailjs from 'emailjs-com';
@@ -24,14 +26,14 @@ const ContactPage: React.FC = () => {
       },
       'vHB1eh0fYIUNCuApH' // EmailJS user ID (public key)
     )
-    .then(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    })
-    .catch((error) => {
-      alert('Failed to send message. Please try again later.');
-      console.error('EmailJS error:', error);
-    });
+      .then(() => {
+        alert('Thank you for your message! I\'ll get back to you soon.');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      })
+      .catch((error) => {
+        alert('Failed to send message. Please try again later.');
+        console.error('EmailJS error:', error);
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -71,7 +73,7 @@ const ContactPage: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
                     <Phone size={20} className="text-white" />
@@ -86,7 +88,7 @@ const ContactPage: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
                     <MapPin size={20} className="text-white" />
@@ -150,7 +152,7 @@ const ContactPage: React.FC = () => {
                     placeholder="Your name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                     Email
@@ -197,7 +199,7 @@ const ContactPage: React.FC = () => {
                   placeholder="Leave feedback about the site, career opportunities or just to say hello etc."
                 />
               </div>
-              
+
               <button
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
@@ -206,7 +208,7 @@ const ContactPage: React.FC = () => {
                 Send Message
               </button>
             </form>
-            
+
             <p className="text-gray-400 text-sm mt-4 text-center">
               By submitting this form, I agree to the{' '}
               <a href="#" className="text-blue-400 hover:text-blue-300 underline">

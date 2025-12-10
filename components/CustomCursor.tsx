@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 
 const CustomCursor: React.FC = () => {
@@ -7,7 +9,7 @@ const CustomCursor: React.FC = () => {
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${e.clientX - size/2}px, ${e.clientY - size/2}px, 0)`;
+        cursorRef.current.style.transform = `translate3d(${e.clientX - size / 2}px, ${e.clientY - size / 2}px, 0)`;
       }
     };
     const hideCursor = () => {

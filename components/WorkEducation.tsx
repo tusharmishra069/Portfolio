@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { MapPin, Calendar, ExternalLink, Award } from 'lucide-react';
 
@@ -95,21 +97,19 @@ const WorkEducation: React.FC = () => {
           <div className="bg-gray-900 rounded-lg p-1 flex border border-gray-700 w-full max-w-md">
             <button
               onClick={() => setActiveTab('work')}
-              className={`flex-1 py-3 rounded-lg font-medium transition-all text-center ${
-                activeTab === 'work'
+              className={`flex-1 py-3 rounded-lg font-medium transition-all text-center ${activeTab === 'work'
                   ? 'bg-blue-600 text-white shadow-lg'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               Work
             </button>
             <button
               onClick={() => setActiveTab('education')}
-              className={`flex-1 py-3 rounded-lg font-medium transition-all text-center ${
-                activeTab === 'education'
+              className={`flex-1 py-3 rounded-lg font-medium transition-all text-center ${activeTab === 'education'
                   ? 'bg-blue-600 text-white shadow-lg'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               Education
             </button>
@@ -151,7 +151,7 @@ const WorkEducation: React.FC = () => {
                           </a>
                         )}
                       </div>
-                      
+
                       <ul className="space-y-2">
                         {job.description.map((item, idx) => (
                           <li key={idx} className="text-gray-300 flex items-start gap-2">
@@ -189,7 +189,7 @@ const WorkEducation: React.FC = () => {
                         </div>
                         <Award className="text-gray-400 flex-shrink-0 ml-4" size={18} />
                       </div>
-                      
+
                       <ul className="space-y-2">
                         {edu.description.map((item, idx) => (
                           <li key={idx} className="text-gray-300 flex items-start gap-2">

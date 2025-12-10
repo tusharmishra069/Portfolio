@@ -1,4 +1,6 @@
-import  { useState } from 'react';
+"use client";
+
+import { useState } from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 
 type SalaryMessage = { type: 'salary' };
@@ -51,7 +53,7 @@ const Chatbot: React.FC = () => {
 
   const generateResponse = (userMessage: string): string | SalaryMessage => {
     const message = userMessage.toLowerCase();
-    
+
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
       return portfolioData.experience[0] + " " + portfolioData.experience[1];
     } else if (message.includes('project') || message.includes('build') || message.includes('created')) {
@@ -136,11 +138,10 @@ const Chatbot: React.FC = () => {
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[70%] p-3 rounded-lg ${
-                    message.sender === 'user'
+                  className={`max-w-[70%] p-3 rounded-lg ${message.sender === 'user'
                       ? 'bg-blue-600 text-white'
                       : 'bg-gray-700 text-gray-100'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-2">
                     {message.sender === 'bot' && <Bot size={16} className="mt-1 flex-shrink-0" />}
