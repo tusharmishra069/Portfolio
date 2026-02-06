@@ -1,26 +1,29 @@
 "use client";
 
-import { useState } from 'react';
-import { MapPin, Calendar, ExternalLink, Award } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { MapPin, Calendar, ExternalLink, Briefcase, GraduationCap } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { cn } from '@/lib/utils';
 
 const WorkEducation: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'work' | 'education'>('work');
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const workExperience = [
     {
       id: 1,
       company: 'Vegablocks',
       position: 'Fullstack AI/ML Developer',
-      duration: 'April 2025 – Present',
+      duration: 'April 2025 – December 2025',
       location: 'Remote',
       description: [
-        'Spearheaded development of BRICSHR, a modern HR platform',
-        'Built scalable backend and frontend systems integrating AI for HR tasks',
-        'Integrated AI features: Resume Builder, Cover Letter Generator, Salary Calculator, Interview Simulator, Job Description Generator, Interview Question Bank'
+        'Spearheaded development of BRICSHR, a modern HR platform, delivering both frontend and backend systems with seamless UI and scalable APIs.',
+        'Built scalable backend and frontend systems integrating AI for HR tasks.',
+        'Integrated AI capabilities including: Resume Builder, Cover Letter Generator, Salary Calculator, Interview Simulator, Job Description Generator, Interview Question Bank.',
+        'Deployed production-ready applications.'
       ],
       link: 'https://brics-hr.vercel.app/',
-      logo: 'VB',
-      logoColor: 'from-blue-500 to-purple-600'
+      color: 'blue'
     },
     {
       id: 2,
@@ -29,12 +32,11 @@ const WorkEducation: React.FC = () => {
       duration: 'May 2024 – December 2024',
       location: 'Bhilai, Chhattisgarh',
       description: [
-        'Designed UIs for internal systems',
-        'Developed Venue Booking System',
-        'Built RSDC: event registration & certificate automation platform'
+        'Designed modern, aesthetic user interfaces for internal client systems.',
+        'Developed Venue Booking System for campus venue management.',
+        'Built RSDC: A complete event registration and certificate automation platform.'
       ],
-      logo: 'RT',
-      logoColor: 'from-green-500 to-blue-600'
+      color: 'green'
     },
     {
       id: 3,
@@ -43,13 +45,13 @@ const WorkEducation: React.FC = () => {
       duration: 'June 2024 – July 2024',
       location: 'Remote',
       description: [
-        'Movie Recommendation System (collaborative filtering)',
-        'White Wine Quality Prediction (SVM)',
-        'Servo Motor Speed Prediction (Linear Regression)'
+        'Built a Movie Recommendation System using collaborative filtering.',
+        'Developed White Wine Quality Prediction using SVM.',
+        'Implemented Servo Motor Speed Prediction via Simple Linear Regression.',
+        'Developed and deployed multiple end-to-end ML projects during internship.'
       ],
       link: 'https://github.com/tusharmishra069/ML-Projects-intern-',
-      logo: 'YBI',
-      logoColor: 'from-orange-500 to-red-600'
+      color: 'orange'
     },
     {
       id: 4,
@@ -58,11 +60,10 @@ const WorkEducation: React.FC = () => {
       duration: 'July 2024 – August 2024',
       location: 'Remote',
       description: [
-        'Promoted tech education',
-        'Organized workshops and skill-building sessions'
+        'Promoted tech education among peers.',
+        'Organized workshops and skill-building sessions.'
       ],
-      logo: 'LU',
-      logoColor: 'from-purple-500 to-pink-600'
+      color: 'purple'
     }
   ];
 
@@ -70,143 +71,180 @@ const WorkEducation: React.FC = () => {
     {
       id: 1,
       institution: 'Rungta College of Engineering and Technology',
-      degree: 'B.Tech',
+      degree: 'Bachelor of Technology (B.Tech)',
       duration: 'Aug 2022 – Jul 2026',
       location: 'Bhilai, Chhattisgarh',
-      description: ['Currently pursuing Bachelor of Technology'],
-      logo: 'RCET',
-      logoColor: 'from-green-500 to-blue-600'
+      description: ['Currently pursuing Bachelor of Technology in Computer Science.'],
+      color: 'indigo'
     },
     {
       id: 2,
       institution: 'DAV Public School, Bachra',
-      degree: 'Class XII – 73%',
+      degree: 'Higher Secondary (Class XII)',
       duration: '2020 – 2022',
       location: 'Bachra',
-      description: ['Completed Higher Secondary Education'],
-      logo: 'DAV',
-      logoColor: 'from-blue-500 to-indigo-600'
+      description: ['Completed with 73%.'],
+      color: 'cyan'
     }
   ];
 
+  const data = activeTab === 'work' ? workExperience : education;
+
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-gray-900 rounded-lg p-1 flex border border-gray-700 w-full max-w-md">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" id="experience">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -z-10" />
+
+      <div className="max-w-5xl mx-auto" ref={containerRef}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            My <span className="text-transparent bg-clip-text bg-blue-500">Journey</span>
+          </h2>
+
+          {/* Custom Tab Switcher */}
+          <div className="inline-flex bg-gray-900/50 backdrop-blur-sm p-1.5 rounded-full border border-gray-800/50 relative">
+            <div
+              className={cn(
+                "absolute top-1.5 bottom-1.5 rounded-full bg-gray-800 shadow-sm transition-all duration-300 ease-out",
+                activeTab === 'work' ? "left-1.5 w-[calc(50%-6px)]" : "left-[50%] w-[calc(50%-6px)]"
+              )}
+            />
             <button
               onClick={() => setActiveTab('work')}
-              className={`flex-1 py-3 rounded-lg font-medium transition-all text-center ${activeTab === 'work'
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'text-gray-400 hover:text-white'
-                }`}
+              className={cn(
+                "relative z-10 px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 flex items-center gap-2",
+                activeTab === 'work' ? "text-white" : "text-gray-400 hover:text-gray-200"
+              )}
             >
-              Work
+              <Briefcase size={16} />
+              Experience
             </button>
             <button
               onClick={() => setActiveTab('education')}
-              className={`flex-1 py-3 rounded-lg font-medium transition-all text-center ${activeTab === 'education'
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'text-gray-400 hover:text-white'
-                }`}
+              className={cn(
+                "relative z-10 px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 flex items-center gap-2",
+                activeTab === 'education' ? "text-white" : "text-gray-400 hover:text-gray-200"
+              )}
             >
+              <GraduationCap size={16} />
               Education
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Single Container for Both Sections */}
-        <div className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden">
-          {activeTab === 'work' ? (
-            <div className="divide-y divide-gray-700">
-              {workExperience.map((job, index) => (
-                <div
-                  key={job.id}
-                  className="p-6 hover:bg-gray-800 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
-                      {job.logo}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-sm text-gray-400">{job.duration}</span>
-                          </div>
-                          <h3 className="text-xl font-semibold text-white mb-1">
-                            {job.company}
-                          </h3>
-                          <p className="text-blue-400 font-medium mb-2">{job.position}</p>
-                        </div>
-                        {job.link && (
-                          <a
-                            href={job.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-blue-400 transition-colors flex-shrink-0 ml-4"
-                          >
-                            <ExternalLink size={18} />
-                          </a>
-                        )}
-                      </div>
+        <div className="relative max-w-3xl mx-auto">
+          {/* Vertical Line */}
+          <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-gray-800" />
 
-                      <ul className="space-y-2">
-                        {job.description.map((item, idx) => (
-                          <li key={idx} className="text-gray-300 flex items-start gap-2">
-                            <span className="text-blue-400 mt-2 text-xs">•</span>
-                            <span className="text-sm leading-relaxed">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="divide-y divide-gray-700">
-              {education.map((edu, index) => (
-                <div
-                  key={edu.id}
-                  className="p-6 hover:bg-gray-800 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
-                      {edu.logo}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-sm text-gray-400">{edu.duration}</span>
-                          </div>
-                          <h3 className="text-xl font-semibold text-white mb-1">
-                            {edu.institution}
-                          </h3>
-                          <p className="text-green-400 font-medium mb-2">{edu.degree}</p>
-                        </div>
-                        <Award className="text-gray-400 flex-shrink-0 ml-4" size={18} />
-                      </div>
-
-                      <ul className="space-y-2">
-                        {edu.description.map((item, idx) => (
-                          <li key={idx} className="text-gray-300 flex items-start gap-2">
-                            <span className="text-green-400 mt-2 text-xs">•</span>
-                            <span className="text-sm leading-relaxed">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="space-y-6 pl-8">
+            {data.map((item, index) => (
+              <TimelineItem
+                key={item.id}
+                item={item}
+                index={index}
+                type={activeTab}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  );
+};
+
+const TimelineItem = ({ item, index, type }: { item: any, index: number, type: 'work' | 'education' }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className={cn(
+        "relative cursor-pointer group focus:outline-none"
+      )}
+      onMouseEnter={() => setIsExpanded(true)}
+      onMouseLeave={() => setIsExpanded(false)}
+      onFocus={() => setIsExpanded(true)}
+      onBlur={() => setIsExpanded(false)}
+      tabIndex={0}
+    >
+      {/* Timeline Dot */}
+      <div className={cn(
+        "absolute -left-[39px] top-1.5 w-5 h-5 rounded-full bg-gray-900 border-4 z-10 transition-colors duration-300",
+        // Dynamic border color on hover/focus matching the group
+        "border-blue-500 group-hover:border-purple-500 group-focus:border-purple-500 group-hover:scale-110"
+      )} />
+
+      <div className={cn(
+        "flex flex-col gap-2 p-4 rounded-xl transition-all duration-300",
+        "bg-transparent hover:bg-white/5 focus-within:bg-white/5"
+      )}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+          <h3 className="text-xl font-bold text-white group-hover:text-blue-400 group-focus:text-blue-400 transition-colors">
+            {type === 'work' ? item.company : item.institution}
+          </h3>
+          <div className="flex items-center gap-2 text-sm text-gray-400">
+            <span className="flex items-center gap-1">
+              <Calendar size={14} />
+              {item.duration}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <p className="text-blue-400 font-medium text-base">
+            {type === 'work' ? item.position : item.degree}
+          </p>
+          {item.link && (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-white transition-colors p-1"
+              onClick={(e) => e.stopPropagation()}
+              title="View Project/Company"
+            >
+              <ExternalLink size={16} />
+            </a>
+          )}
+        </div>
+
+        {/* Expandable Content */}
+        <motion.div
+          animate={{
+            height: isExpanded ? "auto" : 0,
+            opacity: isExpanded ? 1 : 0,
+            marginTop: isExpanded ? 8 : 0
+          }}
+          initial={{ height: 0, opacity: 0, marginTop: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
+          <div className="text-sm text-gray-500 flex items-center gap-1 mb-2">
+            <MapPin size={14} />
+            {item.location}
+          </div>
+
+          <ul className="space-y-2 mt-1">
+            {item.description.map((desc: string, i: number) => (
+              <li key={i} className="text-gray-300 text-sm leading-relaxed flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gray-600 mt-1.5 flex-shrink-0" />
+                {desc}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 };
 

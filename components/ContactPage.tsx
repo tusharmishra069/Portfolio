@@ -15,8 +15,8 @@ const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     emailjs.send(
-      'service_qjfxuan', // EmailJS service ID
-      'template_puhhlzo', // EmailJS template ID
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // EmailJS service ID
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // EmailJS template ID
       {
         name: formData.name,
         email: formData.email,
@@ -24,7 +24,7 @@ const ContactPage: React.FC = () => {
         message: formData.message,
         time: new Date().toLocaleString(),
       },
-      'vHB1eh0fYIUNCuApH' // EmailJS user ID (public key)
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // EmailJS user ID (public key)
     )
       .then(() => {
         alert('Thank you for your message! I\'ll get back to you soon.');
