@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import { useChat } from '@/context/ChatContext';
 
 type SalaryMessage = { type: 'salary' };
 interface Message {
@@ -12,7 +13,7 @@ interface Message {
 }
 
 const Chatbot: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, toggleChat } = useChat();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -110,7 +111,7 @@ const Chatbot: React.FC = () => {
     <>
       {/* Chat Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleChat}
         className="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 z-50"
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
@@ -139,8 +140,8 @@ const Chatbot: React.FC = () => {
               >
                 <div
                   className={`max-w-[70%] p-3 rounded-lg ${message.sender === 'user'
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-700 text-gray-100'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-700 text-gray-100'
                     }`}
                 >
                   <div className="flex items-start gap-2">

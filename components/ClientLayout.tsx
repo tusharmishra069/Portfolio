@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Header from "./Header";
+import { ResizableHeader } from "./ResizableHeader";
 import Footer from "./Footer";
 import Chatbot from "./Chatbot";
-import CustomCursor from "./CustomCursor";
+import { ChatProvider } from "@/context/ChatContext";
 
 export default function ClientLayout({
     children,
@@ -18,16 +18,15 @@ export default function ClientLayout({
     };
 
     return (
-        <>
-            <CustomCursor />
+        <ChatProvider>
             <div className={`${darkMode ? "dark" : ""}`}>
                 <div className="bg-black text-white min-h-screen">
-                    <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                    <ResizableHeader />
                     <main>{children}</main>
                     <Footer />
                     <Chatbot />
                 </div>
             </div>
-        </>
+        </ChatProvider>
     );
 }
