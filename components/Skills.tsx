@@ -138,13 +138,13 @@ const Skills = () => {
             title: "AI & Machine Learning",
             description: "Developing intelligent systems and integrating LLMs.",
             header: (
-                <div className="grid grid-cols-3 gap-2 h-full content-center">
+                <div className="grid grid-cols-2 gap-2 h-full content-center">
                     {aiMlSkills.map((skill, index) => (
                         <SkillItem key={index} skill={skill} />
                     ))}
                 </div>
             ),
-            icon: <Brain className="h-4 w-4 text-neutral-500" />,
+            icon: <Brain className="h-5 w-5 text-neutral-500" />,
             className: "md:col-span-1 md:row-span-2",
         },
         {

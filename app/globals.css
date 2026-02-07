@@ -142,6 +142,6 @@ html::-webkit-scrollbar,
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-white antialiased;
   }
 }

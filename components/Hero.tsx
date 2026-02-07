@@ -39,13 +39,6 @@ const Hero: React.FC = () => {
             >
               For Q&A, chat with Tushar Bot →
             </p>
-            <p className="text-base text-gray-500">
-              For collaborations, please find my{' '}
-              <a href="https://www.linkedin.com/in/tushar-kumar-mishra-1974b124b/" className="text-blue-400 hover:text-blue-300 underline">
-                LinkedIn
-              </a>{' '}
-              instead.
-            </p>
           </div>
 
           {/* Action Buttons */}
