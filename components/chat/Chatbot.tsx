@@ -43,6 +43,48 @@ const Chatbot: React.FC = () => {
     scrollToBottom();
   }, [messages, isOpen, isLoading]);
 
+  // Helper to parse the stream and update the message
+  const processStream = async (response: Response, botMessageId: string) => {
+    const reader = response.body?.getReader();
+    const decoder = new TextDecoder();
+
+    if (!reader) return;
+
+    let accumulatedText = "";
+
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        accumulatedText += chunk;
+
+        // Update the message in real-time
+        setMessages(prev => prev.map(msg =>
+          msg.id === botMessageId
+            ? { ...msg, text: accumulatedText }
+            : msg
+        ));
+      }
+
+      // Check for special triggers after full response
+      if (
+        accumulatedText.toLowerCase().includes('book a call') ||
+        accumulatedText.toLowerCase().includes('discuss this with you')
+      ) {
+        setMessages(prev => prev.map(msg =>
+          msg.id === botMessageId
+            ? { ...msg, text: { type: 'salary' } }
+            : msg
+        ));
+      }
+
+    } catch (error) {
+      console.error("Error reading stream:", error);
+    }
+  };
+
   const handleSend = async (messageText: string = inputValue) => {
     if (!messageText.trim()) return;
 
@@ -57,6 +99,16 @@ const Chatbot: React.FC = () => {
     setInputValue('');
     setIsLoading(true);
 
+    // Create a placeholder bot message
+    const botMessageId = (Date.now() + 1).toString();
+    const placeholderMessage: Message = {
+      id: botMessageId,
+      text: "", // Start empty
+      sender: 'bot',
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, placeholderMessage]);
+
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -64,31 +116,21 @@ const Chatbot: React.FC = () => {
         body: JSON.stringify({ message: messageText }),
       });
 
-      const data = await response.json();
+      if (!response.ok) throw new Error('Network response was not ok');
 
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: data.text,
-        sender: 'bot',
-        timestamp: new Date()
-      };
+      await processStream(response, botMessageId);
 
-      if (
-        data.text.toLowerCase().includes('book a call') ||
-        data.text.toLowerCase().includes('discuss this with you')
-      ) {
-        botMessage.text = { type: 'salary' };
-      }
-
-      setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error("Error sending message:", error);
       const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
+        id: (Date.now() + 2).toString(),
         text: "Sorry, I'm having trouble connecting to the brain right now. Please try again later.",
         sender: 'bot',
         timestamp: new Date()
       };
+      // Replace the empty placeholder with error or append error? 
+      // Better to remove the empty placeholder if it's still empty, or just append error.
+      // For simplicity, we just append error here.
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);

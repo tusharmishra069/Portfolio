@@ -194,7 +194,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ text: "Error: Gemini API Key not found. Please contact Tushar." }, { status: 500 });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
         const prompt = `
       You are an AI assistant for Tushar Kumar Mishra's portfolio website. 
@@ -217,11 +217,32 @@ export async function POST(req: Request) {
       User Question: ${message}
     `;
 
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const text = response.text();
+        const result = await model.generateContentStream(prompt);
 
-        return NextResponse.json({ text });
+        // Convert the Gemini stream to a readable stream for the response
+        const stream = new ReadableStream({
+            async start(controller) {
+                const encoder = new TextEncoder();
+                try {
+                    for await (const chunk of result.stream) {
+                        const chunkText = chunk.text();
+                        if (chunkText) {
+                            controller.enqueue(encoder.encode(chunkText));
+                        }
+                    }
+                    controller.close();
+                } catch (error) {
+                    controller.error(error);
+                }
+            },
+        });
+
+        return new Response(stream, {
+            headers: {
+                "Content-Type": "text/plain; charset=utf-8",
+            },
+        });
+
     } catch (error) {
         console.error("Error generating response:", error);
         return NextResponse.json({ text: "Sorry, I encountered an error. Please try again later." }, { status: 500 });
