@@ -5,9 +5,11 @@ import Link from "next/link";
 import {
   motion,
   AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
 } from "motion/react";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 
 interface NavbarProps {
@@ -49,7 +51,22 @@ interface MobileNavMenuProps {
 }
 
 export const Navbar = ({ children, className }: NavbarProps) => {
-  const [visible, setVisible] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean>(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 0) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+  });
+
+  useEffect(() => {
+    if (window.scrollY > 0) {
+      setVisible(true);
+    }
+  }, []);
 
   return (
     <motion.div
