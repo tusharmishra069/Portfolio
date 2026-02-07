@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ResizableHeader } from "./ResizableHeader";
 import Footer from "./Footer";
-import Chatbot from "./Chatbot";
+import Chatbot from "./chat/Chatbot";
 import { ChatProvider } from "@/context/ChatContext";
 
 export default function ClientLayout({
