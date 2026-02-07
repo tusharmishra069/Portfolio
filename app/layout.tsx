@@ -5,6 +5,9 @@ import ClientLayout from "@/components/ClientLayout";
 export const metadata: Metadata = {
     title: "Tushar - Portfolio",
     description: "Portfolio of Tushar Mishra",
+    icons: {
+        icon: "/http.png",
+    },
 };
 
 export default function RootLayout({
