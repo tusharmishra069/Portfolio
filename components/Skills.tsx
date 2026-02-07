@@ -13,7 +13,11 @@ import {
     Code2,
     Globe,
     Puzzle,
-    Link as LinkIcon
+    Link as LinkIcon,
+    Bot,
+    Wrench,
+    Workflow,
+    Key
 } from 'lucide-react';
 
 const SkillItem = ({ skill }: { skill: any }) => (
@@ -40,19 +44,22 @@ const Skills = () => {
     // Consolidated Full Stack Skills
     const fullStackSkills = [
         { name: 'HTML5', icon: 'html5' },
-        { name: 'CSS3', icon: 'css3' },
+        // { name: 'CSS3', icon: 'css3/white' },
         { name: 'JavaScript', icon: 'javascript' },
-        { name: 'Typescript', icon: 'typescript' },
-        { name: 'Next.js', icon: 'nextdotjs' },
+        { name: 'TypeScript', icon: 'typescript' },
         { name: 'React', icon: 'react' },
+        { name: 'Next.js', icon: 'nextdotjs/white' },
+        { name: 'Tailwind CSS', icon: 'tailwindcss' },
+        // { name: 'Framer Motion', icon: 'framermotion' },
         { name: 'Node.js', icon: 'nodedotjs' },
-        { name: 'FastAPI', icon: 'fastapi' },
+        { name: 'NestJS', icon: 'nestjs' },
         { name: 'MongoDB', icon: 'mongodb' },
         { name: 'PostgreSQL', icon: 'postgresql' },
-        { name: 'Docker', icon: 'docker' },
-        { name: 'Tailwind', icon: 'tailwindcss' },
-        { name: 'Framer Motion', icon: 'framermotion' },
+        { name: 'Prisma', icon: 'prisma/white' },
+        { name: 'REST APIs', icon: Globe },
+        { name: 'JWT Authentication', icon: 'jsonwebtokens/white' }
     ];
+
 
     const aiMlSkills = [
         { name: 'Python', icon: 'python' },
@@ -63,10 +70,15 @@ const Skills = () => {
         { name: 'PyTorch', icon: 'pytorch' },
         { name: 'LangChain', icon: 'langchain' },
         { name: 'Hugging Face', icon: 'huggingface' },
-        { name: 'OpenAI', icon: 'openai' },
+        // { name: 'OpenAI', icon: 'openai/white' },
+        { name: 'FastAPI', icon: 'fastapi' },
         { name: 'NLP', icon: Speech },
         { name: 'CV', icon: Eye },
         { name: 'RAG', icon: Database },
+        { name: 'n8n', icon: 'n8n' },
+        { name: 'LLM Agents', icon: Bot },
+        { name: 'Tool Calling', icon: Wrench },
+        { name: 'Workflow Automation', icon: Workflow },
     ];
 
     const blockchainSkills = [
@@ -78,16 +90,22 @@ const Skills = () => {
         { name: 'TON', icon: 'ton' },
         { name: 'FunC', icon: Terminal },
         { name: 'Web3.js', icon: Globe },
+        { name: 'Cryptography', icon: Key },
+
     ];
 
     const devTools = [
         { name: 'Git', icon: 'git' },
-        { name: 'VS Code', icon: 'visualstudiocode' },
+        { name: 'GitHub', icon: 'github/white' },
+        // { name: 'VS Code', icon: 'visualstudiocode/white' },
         { name: 'Postman', icon: 'postman' },
-        { name: 'Figma', icon: 'figma' },
+        { name: 'Docker', icon: 'docker' },
         { name: 'Linux', icon: 'linux' },
-        { name: 'Vercel', icon: 'vercel' }, // Removed /white
+        { name: 'Vercel', icon: 'vercel/white' },
+        { name: 'Render', icon: 'render/white' },
+        { name: 'Figma', icon: 'figma' }
     ];
+
 
     const items = [
         {

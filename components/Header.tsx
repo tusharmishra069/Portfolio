@@ -14,7 +14,6 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
 
   const navigation = [
     { name: '/', label: 'Home' },
-    { name: '/projects', label: 'Projects' },
     { name: '/contact', label: 'Contact' }
   ];
 
@@ -45,8 +44,8 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                 key={item.name}
                 href={item.name}
                 className={`text-sm font-normal transition-colors ${isActive(item.name)
-                    ? 'text-blue-400'
-                    : 'text-gray-300 hover:text-white'
+                  ? 'text-blue-400'
+                  : 'text-gray-300 hover:text-white'
                   }`}
               >
                 {item.label}
@@ -95,8 +94,8 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                   href={item.name}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${isActive(item.name)
-                      ? 'text-blue-400 bg-gray-800'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                    ? 'text-blue-400 bg-gray-800'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800'
                     }`}
                 >
                   {item.label}

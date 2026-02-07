@@ -16,8 +16,10 @@ export function ResizableHeader() {
     const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
-        { name: "Home", link: "/" },
-        { name: "Projects", link: "/projects" },
+        { name: "About Me", link: "/about" },
+        { name: "Experience", link: "/#experience" },
+        { name: "Projects", link: "/#projects" },
+        { name: "Skills", link: "/#skills" },
         { name: "Contact", link: "/contact" },
     ];
 
@@ -25,9 +27,9 @@ export function ResizableHeader() {
         <div className="relative w-full">
             <Navbar className="top-0">
                 <NavBody>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 relative z-50">
                         <Link
-                            href="/"
+                            href="/#hero"
                             className="text-xl font-bold text-black dark:text-white hover:text-blue-400 transition-colors"
                         >
                             T<span className="text-blue-400">M</span>
@@ -43,7 +45,7 @@ export function ResizableHeader() {
                 <MobileNav visible={true} className="md:hidden">
                     <MobileNavHeader>
                         <Link
-                            href="/"
+                            href="/#hero"
                             className="text-xl font-bold text-black dark:text-white"
                         >
                             tushar<span className="text-blue-400">mishra</span>
