@@ -4,12 +4,12 @@ import { ArrowLeft } from "lucide-react";
 
 export default function About() {
     return (
-        <div className="p-8 md:p-16 font-sans relative overflow-hidden">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" id="about">
             {/* Background Gradients */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" />
+            <div className="absolute top-0 left-0 w-96 h-96 bg-red-500/20 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/20 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" />
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
                 {/* Image Section */}
                 <div className="relative aspect-square md:aspect-[3/4] w-full max-w-md mx-auto overflow-hidden rounded-2xl ">
                     <Image
@@ -23,7 +23,7 @@ export default function About() {
 
                 {/* Text Section */}
                 <div className="space-y-8">
-                    <h1 className="text-4xl md:text-6xl pt-7 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    <h1 className="text-4xl md:text-6xl pt-7 font-bold bg-clip-text text-transparent bg-blue-600">
                         About Me
                     </h1>
 
@@ -53,6 +53,6 @@ export default function About() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
