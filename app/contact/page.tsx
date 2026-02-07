@@ -44,12 +44,11 @@ export default function Contact() {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white p-8 md:p-16 font-sans relative overflow-hidden">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" id="contact">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
-            {/* <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" /> */}
 
-            <div className="max-w-7xl mx-auto pt-10 relative z-10">
+            <div className="max-w-5xl mx-auto relative z-10">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                         Get in Touch
@@ -225,6 +224,6 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
