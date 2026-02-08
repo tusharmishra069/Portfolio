@@ -6,7 +6,7 @@ import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
 // Imports combined in the previous chunk
 import { Globe } from '@/components/ui/globe'
 import { AnimatedBeam } from '@/components/ui/animated-beam'
-import { HudAreaChart } from "@/components/ui/hud-area-chart-1";
+// import { HudAreaChart } from "@/components/ui/hud-area-chart-1";
 
 const chartData = [
     { time: "00:00", value: 45 },
