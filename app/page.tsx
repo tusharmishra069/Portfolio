@@ -4,6 +4,7 @@ import WorkEducation from "@/components/WorkEducation";
 import Skills from "@/components/Skills";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import { LetsConnect } from "@/components/letsconnect";
+import { Services } from '@/components/services'
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <WorkEducation />
             <Skills />
             <FeaturedProjects />
+            <Services />
             <LetsConnect />
         </>
     );
