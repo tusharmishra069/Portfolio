@@ -27,7 +27,7 @@ const projects: Project[] = [
     id: 2,
     title: 'MisBot',
     type: 'Web3',
-    image: '/ss/MisBot.png',
+    image: '/ss/misbot.png',
     link: 'https://github.com/tusharmishra069/MisBot.git',
     description: 'MISBOT is a production-ready Web3 tap-to-earn Telegram Mini App built with Next.js, Node.js, and the TON blockchain. It features real-time gameplay mechanics, secure TON wallet integration, and global leaderboards backed by a PostgreSQL database.'
   },
