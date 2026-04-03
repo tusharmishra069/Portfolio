@@ -17,6 +17,22 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: 'DevGuard',
+    type: 'CLI / AI',
+    image: '/ss/devguard.png',
+    link: 'https://github.com/tusharmishra069/DevGuard',
+    description: 'AI-powered code review CLI with interactive full-screen TUI and intelligent chatbot. DevGuard automates code review using AI providers (Groq, Anthropic, Google Gemini) with a beautiful terminal UI. Get instant feedback on security, performance, and code quality issues, then chat with an AI assistant to fix them directly.'
+  },
+  {
+    id: 2,
+    title: 'AI Code Analyzer',
+    type: 'Next.js / Analytics',
+    image: '/ss/aicodeanalyzer.png',
+    link: 'https://github-analyzer-tan.vercel.app/',
+    description: 'A fast, self-hostable developer tool that uses LLMs to review GitHub repositories, assess developer profiles, and roast your commit history — with zero buzzwords.'
+  },
+  {
+    id: 3,
     title: 'HasthVaani: Smart Hand Gloves',
     type: 'IoT / ML',
     image: '/ss/hasthvani.png',
@@ -24,7 +40,7 @@ const projects: Project[] = [
     description: 'HasthVaani aims to bridge the communication gap for deaf and mute individuals through smart hand gloves integrated with machine learning and sensor technology. The gloves translate hand gestures into speech and text, enabling seamless communication.'
   },
   {
-    id: 2,
+    id: 4,
     title: 'MisBot',
     type: 'Web3',
     image: '/ss/misbot.png',
@@ -32,7 +48,7 @@ const projects: Project[] = [
     description: 'MISBOT is a production-ready Web3 tap-to-earn Telegram Mini App built with Next.js, Node.js, and the TON blockchain. It features real-time gameplay mechanics, secure TON wallet integration, and global leaderboards backed by a PostgreSQL database.'
   },
   {
-    id: 3,
+    id: 5,
     title: 'BRICSHR',
     type: 'MERN / AI',
     image: '/ss/brics hr.png',
@@ -40,7 +56,7 @@ const projects: Project[] = [
     description: 'A comprehensive HR management platform integrating job funding and scholarship management features. Built to streamline recruitment processes and facilitate educational support through automated funding workflows.'
   },
   {
-    id: 4,
+    id: 6,
     title: 'ResuME.AI',
     type: 'AI / Python',
     image: '/ss/resume.ai.png',
@@ -48,7 +64,7 @@ const projects: Project[] = [
     description: 'A modern, AI-powered web application for enhancing resumes, checking ATS (Applicant Tracking System) compatibility, and tailoring resumes to job descriptions. Built with Streamlit and Google Gemini AI, this platform helps users create professional, ATS-optimized resumes with ease.'
   },
   {
-    id: 5,
+    id: 7,
     title: 'Developer Portfolio',
     type: 'React / Vite',
     image: '/ss/portfolio.png',
@@ -56,7 +72,7 @@ const projects: Project[] = [
     description: 'A modern, responsive developer portfolio built with React and Vite. Showcases projects, skills, and experience with a clean, high-performance UI and interactive elements.'
   },
   {
-    id: 6,
+    id: 8,
     title: 'CrowdFunding',
     type: 'MERN / Web3',
     image: '/ss/CrowdFunding.png',
@@ -64,15 +80,7 @@ const projects: Project[] = [
     description: 'A decentralized crowdfunding platform built on Ethereum blockchain that enables users to create, discover, and fund campaigns transparently and securely using smart contracts.'
   },
   {
-    id: 7,
-    title: 'CodeInsight.AI',
-    type: 'Next.js / Analytics',
-    image: '/ss/codeinsight.png',
-    link: 'https://github.com/tusharmishra069/CodeInsight.AI.git',
-    description: 'CodeInsight AI is an intelligent developer analytics platform that analyzes GitHub and LeetCode profiles to deliver actionable insights into a developer’s coding journey. It evaluates repositories, contributions, and activity to generate a personalized dashboard.'
-  },
-  {
-    id: 8,
+    id: 9,
     title: 'AutoCerti',
     type: 'Automation / Flask',
     image: '/ss/autocerti.png',
@@ -80,7 +88,7 @@ const projects: Project[] = [
     description: 'AutoCerti is a web-based application that streamlines the process of generating personalized certificates in bulk. Users can upload their own certificate template and an Excel file containing recipient details to automatically generate certificates.'
   },
   {
-    id: 9,
+    id: 10,
     title: 'Reddit Automation',
     type: 'n8n / AI',
     image: '/ss/n8n-color.png',
