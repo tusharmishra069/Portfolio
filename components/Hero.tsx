@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-4 pt-6">
             <a
-              href="https://drive.google.com/file/d/1bqTdWauXOGC99UbSHnZQIiZoAQtbiThW/view?usp=sharing"
+              href="https://drive.google.com/file/d/1JpiRd5Z5xNP9ZpoNMKvko03UrQC7kTw6/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-gray-800/80 hover:bg-gray-700/80 text-white text-lg rounded-xl transition-colors border border-gray-600 backdrop-blur-sm"
